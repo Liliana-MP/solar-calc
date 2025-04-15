@@ -7,6 +7,7 @@ import { MonthlySaving } from "./MonthlySaving";
 import { RoofSize } from "./RoofSize";
 import { useForm } from "react-hook-form";
 import { Lead, QuoteCalc } from "@/types";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const steps = ["Energy bill", "Roof size", "Monthly savings", "Lead form"];
 
@@ -50,10 +51,10 @@ export const SolarQuoteForm = () => {
       </form>
       <div className={styles.buttonContainer}>
         <button disabled={currentStep === 0} onClick={() => back()}>
-          back
+          <ChevronLeft />
         </button>
         <button disabled={!isValid} onClick={() => next()}>
-          forw
+          <ChevronRight />
         </button>
       </div>
     </div>
