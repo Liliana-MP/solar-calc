@@ -40,7 +40,7 @@ export const SolarQuoteForm = () => {
   return (
     <div>
       <h1>Solar Quote Calculator</h1>
-      <form onSubmit={() => handleSubmit()}>
+      <form className={styles.formContainer} onSubmit={() => handleSubmit()}>
         {currentStep === 0 && (
           <EnergyBill register={register} errors={errors} />
         )}

@@ -4,6 +4,10 @@
   gap: 4px;
 }
 
+.formContainer {
+  margin-top: 8px;
+}
+
 .buttonContainer {
   display: flex;
   justify-content: space-between;
