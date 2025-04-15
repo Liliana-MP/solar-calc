@@ -7,7 +7,6 @@ export default function Home() {
       <main className={styles.main}>
         <SolarQuoteForm />
       </main>
-      <footer className={styles.footer}></footer>
     </div>
   );
 }

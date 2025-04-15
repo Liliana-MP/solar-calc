@@ -1,4 +1,5 @@
 "use client";
+import styles from "./components.module.css";
 import { useState } from "react";
 import { EnergyBill } from "./EnergyBill";
 import { LeadForm } from "./LeadForm";
