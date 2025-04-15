@@ -1,3 +1,4 @@
+import styles from "./components.module.css";
 import { FieldErrors, UseFormRegister } from "react-hook-form";
 import { QuoteFormData } from "./SolarQuoteForm";
 
@@ -11,8 +12,8 @@ const roofSizes = ["Small", "Medium", "Large"];
 export const RoofSize = ({ register, errors }: Props) => {
   return (
     <>
-      <label>Roof size</label>
-      <div>
+      <label>Choose your approximate roof size</label>
+      <div className={styles.container}>
         {roofSizes.map((size) => (
           <label key={size}>
             <input

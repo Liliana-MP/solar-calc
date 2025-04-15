@@ -13,7 +13,7 @@ export const MonthlySaving = ({ getValues }: Props) => {
 
   return (
     <div className={styles.container}>
-      <label>Estimated monthly savings</label>
+      <label>Your estimated monthly savings</label>
       <span>{sum}</span>
     </div>
   );

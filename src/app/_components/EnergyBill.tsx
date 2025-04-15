@@ -10,7 +10,7 @@ interface Props {
 export const EnergyBill = ({ register, errors }: Props) => {
   return (
     <div className={styles.container}>
-      <label>Average monthly energy bill</label>
+      <label>Input your average monthly energy bill</label>
       <input
         placeholder="Add number"
         type="number"
