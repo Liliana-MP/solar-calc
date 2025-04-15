@@ -14,9 +14,20 @@ export const EnergyBill = ({ register, errors }: Props) => {
       <input
         placeholder="Add number"
         type="number"
-        {...register("calc.energyBill", { required: true })}
+        {...register("calc.energyBill", {
+          required: {
+            value: true,
+            message: "This field is required",
+          },
+          min: {
+            value: 0,
+            message: "Can't be less than 0",
+          },
+        })}
       />
-      {errors.calc?.energyBill && <span>This field is required</span>}
+      {errors.calc?.energyBill && (
+        <span>{errors.calc?.energyBill.message}</span>
+      )}
     </div>
   );
 };
