@@ -11,7 +11,11 @@ export const EnergyBill = ({ register, errors }: Props) => {
   return (
     <div className={styles.container}>
       <label>Average monthly energy bill</label>
-      <input {...register("calc.energyBill", { required: true })} />
+      <input
+        placeholder="Add number"
+        type="number"
+        {...register("calc.energyBill", { required: true })}
+      />
       {errors.calc?.energyBill && <span>This field is required</span>}
     </div>
   );
