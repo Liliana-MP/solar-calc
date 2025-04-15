@@ -1,3 +1,10 @@
+import styles from "./components.module.css";
+
 export const EnergyBill = () => {
-  return <div>EnergyBill</div>;
+  return (
+    <div className={styles.container}>
+      <label>Energy</label>
+      <input id="energy" />
+    </div>
+  );
 };
