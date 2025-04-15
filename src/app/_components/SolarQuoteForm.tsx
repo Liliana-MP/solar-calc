@@ -18,6 +18,7 @@ export const SolarQuoteForm = () => {
   const {
     register,
     watch,
+    getValues,
     formState: { errors, isValid },
   } = useForm<QuoteFormData>({ mode: "all" });
   const [currentStep, setCurrentStep] = useState(0);
@@ -43,7 +44,7 @@ export const SolarQuoteForm = () => {
           <EnergyBill register={register} errors={errors} />
         )}
         {currentStep === 1 && <RoofSize register={register} errors={errors} />}
-        {currentStep === 2 && <MonthlySaving />}
+        {currentStep === 2 && <MonthlySaving getValues={getValues} />}
         {currentStep === 3 && <LeadForm />}
       </form>
       <button disabled={currentStep === 0} onClick={() => back()}>
