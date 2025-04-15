@@ -1,3 +1,4 @@
+import styles from "./components.module.css";
 import { useCalculator } from "@/hooks/useCalculator";
 import { QuoteFormData } from "./SolarQuoteForm";
 import { UseFormGetValues } from "react-hook-form";
@@ -11,7 +12,8 @@ export const MonthlySaving = ({ getValues }: Props) => {
   const sum = useCalculator(calc);
 
   return (
-    <div>
+    <div className={styles.container}>
+      <label>Estimated monthly savings</label>
       <span>{sum}</span>
     </div>
   );

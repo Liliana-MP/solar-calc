@@ -11,7 +11,7 @@ const roofSizes = ["Small", "Medium", "Large"];
 export const RoofSize = ({ register, errors }: Props) => {
   return (
     <>
-      <label>roof size</label>
+      <label>Roof size</label>
       <div>
         {roofSizes.map((size) => (
           <label key={size}>
