@@ -14,9 +14,8 @@ export const RoofSize = ({ register, errors }: Props) => {
       <label>roof size</label>
       <div>
         {roofSizes.map((size) => (
-          <label>
+          <label key={size}>
             <input
-              key={size}
               {...register("calc.roofSize", { required: true })}
               type="radio"
               value={size}

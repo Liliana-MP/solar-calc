@@ -40,11 +40,7 @@ export const SolarQuoteForm = () => {
       <h1>SolarQuoteForm</h1>
       <form onSubmit={() => handleSubmit()}>
         {currentStep === 0 && (
-          <>
-            <label>energy</label>
-            <input {...register("calc.energyBill", { required: true })} />
-            {errors.calc?.energyBill && <span>This field is required</span>}
-          </>
+          <EnergyBill register={register} errors={errors} />
         )}
         {currentStep === 1 && <RoofSize register={register} errors={errors} />}
         {currentStep === 2 && <MonthlySaving />}
