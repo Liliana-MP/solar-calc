@@ -21,10 +21,10 @@ export const SolarQuoteForm = () => {
     <div>
       <h1>SolarQuoteForm</h1>
       <form>
-        <EnergyBill />
-        <RoofSize />
-        <MonthlySaving />
-        <LeadForm />
+        {currentStep === 0 && <EnergyBill />}
+        {currentStep === 1 && <RoofSize />}
+        {currentStep === 2 && <MonthlySaving />}
+        {currentStep === 3 && <LeadForm />}
       </form>
       <button disabled={currentStep === 0} onClick={() => back()}>
         back
