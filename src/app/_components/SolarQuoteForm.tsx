@@ -9,7 +9,7 @@ import { Lead, QuoteCalc } from "@/types";
 
 const steps = ["Energy bill", "Roof size", "Monthly savings", "Lead form"];
 
-type FormData = {
+export type QuoteFormData = {
   calc: QuoteCalc;
   lead: Lead;
 };
@@ -19,7 +19,7 @@ export const SolarQuoteForm = () => {
     register,
     watch,
     formState: { errors, isValid },
-  } = useForm<FormData>({ mode: "all" });
+  } = useForm<QuoteFormData>({ mode: "all" });
   const [currentStep, setCurrentStep] = useState(0);
   const back = () => {
     if (currentStep > 0) setCurrentStep(currentStep - 1);
@@ -33,6 +33,8 @@ export const SolarQuoteForm = () => {
     console.log("submit");
   };
 
+  console.log(watch("calc")); // watch input value by passing the name of it
+
   return (
     <div>
       <h1>SolarQuoteForm</h1>
@@ -44,41 +46,7 @@ export const SolarQuoteForm = () => {
             {errors.calc?.energyBill && <span>This field is required</span>}
           </>
         )}
-        {currentStep === 1 && (
-          <>
-            <label>roof size</label>
-            <div>
-              <label>
-                <input
-                  {...register("calc.roofSize")}
-                  type="radio"
-                  value="small"
-                  id="small"
-                />
-                small
-              </label>
-              <label>
-                <input
-                  {...register("calc.roofSize")}
-                  type="radio"
-                  value="medium"
-                  id="medium"
-                />
-                medium
-              </label>
-              <label>
-                <input
-                  {...register("calc.roofSize")}
-                  type="radio"
-                  value="large"
-                  id="large"
-                />
-                large
-              </label>
-            </div>
-            {errors.calc?.energyBill && <span>This field is required</span>}
-          </>
-        )}
+        {currentStep === 1 && <RoofSize register={register} errors={errors} />}
         {currentStep === 2 && <MonthlySaving />}
         {currentStep === 3 && <LeadForm />}
       </form>
