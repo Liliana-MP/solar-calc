@@ -33,3 +33,15 @@ input {
   border-radius: 0.5rem;
   color: darkslategrey;
 }
+
+button {
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: lightgray;
+  color: black;
+  cursor: pointer;
+  text-decoration: none;
+}
