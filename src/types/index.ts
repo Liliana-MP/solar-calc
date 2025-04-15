@@ -1,6 +1,6 @@
 export type QuoteCalc = {
   energyBill: number;
-  roofSize: "small" | "medium" | "large";
+  roofSize: string;
 };
 
 export type Lead = {

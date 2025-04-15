@@ -17,6 +17,7 @@ type FormData = {
 export const SolarQuoteForm = () => {
   const {
     register,
+    watch,
     formState: { errors, isValid },
   } = useForm<FormData>({ mode: "all" });
   const [currentStep, setCurrentStep] = useState(0);
@@ -43,7 +44,41 @@ export const SolarQuoteForm = () => {
             {errors.calc?.energyBill && <span>This field is required</span>}
           </>
         )}
-        {currentStep === 1 && <RoofSize />}
+        {currentStep === 1 && (
+          <>
+            <label>roof size</label>
+            <div>
+              <label>
+                <input
+                  {...register("calc.roofSize")}
+                  type="radio"
+                  value="small"
+                  id="small"
+                />
+                small
+              </label>
+              <label>
+                <input
+                  {...register("calc.roofSize")}
+                  type="radio"
+                  value="medium"
+                  id="medium"
+                />
+                medium
+              </label>
+              <label>
+                <input
+                  {...register("calc.roofSize")}
+                  type="radio"
+                  value="large"
+                  id="large"
+                />
+                large
+              </label>
+            </div>
+            {errors.calc?.energyBill && <span>This field is required</span>}
+          </>
+        )}
         {currentStep === 2 && <MonthlySaving />}
         {currentStep === 3 && <LeadForm />}
       </form>
