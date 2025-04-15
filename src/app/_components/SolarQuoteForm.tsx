@@ -48,12 +48,14 @@ export const SolarQuoteForm = () => {
         {currentStep === 2 && <MonthlySaving getValues={getValues} />}
         {currentStep === 3 && <LeadForm />}
       </form>
-      <button disabled={currentStep === 0} onClick={() => back()}>
-        back
-      </button>
-      <button disabled={!isValid} onClick={() => next()}>
-        forw
-      </button>
+      <div className={styles.buttonContainer}>
+        <button disabled={currentStep === 0} onClick={() => back()}>
+          back
+        </button>
+        <button disabled={!isValid} onClick={() => next()}>
+          forw
+        </button>
+      </div>
     </div>
   );
 };
